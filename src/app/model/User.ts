@@ -4,8 +4,8 @@ export class User{
     private id: number
     private nome: string
     private usuario: string 
-    private senha: string
+    public senha: string
     private foto: string
-    private tipoUsuario: string
+    public tipoUsuario: string
     public postagem: Postagem[]
 }
