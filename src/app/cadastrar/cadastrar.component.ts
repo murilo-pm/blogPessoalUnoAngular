@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./cadastrar.component.css']
 })
 
-export class CadastrarComponent implements OnInit {
+export class CadastrarComponent implements OnInit { //TS2554: Expected 1 arguments, but got 0
   user: User = new User
   confirmarSenha: string
   tipoUsuario: string
@@ -25,15 +25,16 @@ export class CadastrarComponent implements OnInit {
   }
   //método em TS
   confirmSenha(event: any){
-    this.confirmarSenha=event.targe.value
+    this.confirmarSenha=event.target.value
   }
 
   tipoUser(event: any){
-    this.tipoUsuario=event.targe.value
+    this.tipoUsuario=event.target.value
   }
 
   cadastrar(event: any){
     this.user.tipo = this.tipoUsuario
+    //this.user.tipo = this.tipoUsuario
     
     if(this.user.senha !=  this.confirmarSenha){
       alert("Senhas estão incorretas")
