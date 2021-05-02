@@ -6,6 +6,6 @@ export class Postagem{
     public titulo: string
     public texto: string
     public data: Date
-    private usuario: User
-    private tema: Tema
+    public usuario: User
+    public tema: Tema    //um tema p/ cada postagem
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
-import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -9,34 +8,34 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './cadastrar.component.html',
   styleUrls: ['./cadastrar.component.css']
 })
-export class CadastrarComponent implements OnInit {
 
+export class CadastrarComponent implements OnInit {
   user: User = new User
-  confirmeSenha: string
-  tipoDeUsuario: string
+  confirmarSenha: string
+  tipoUsuario: string
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
-  //quando a página iniciar, faça X coisa
+  //ngOnInit = quando a página iniciar, faça X coisa
   ngOnInit(){
     window.scroll(0,0)
     
   }
-
+  //método em TS
   confirmSenha(event: any){
-    this.confirmeSenha=event.targe.value
+    this.confirmarSenha=event.targe.value
   }
 
   tipoUser(event: any){
-    this.tipoDeUsuario=event.targe.value
+    this.tipoUsuario=event.targe.value
   }
 
   cadastrar(event: any){
-    this.user.tipoUsuario = this.tipoDeUsuario
+    this.user.tipo = this.tipoUsuario
     
-    if(this.user.senha !=  this.confirmeSenha){
+    if(this.user.senha !=  this.confirmarSenha){
       alert("Senhas estão incorretas")
     }else{
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
