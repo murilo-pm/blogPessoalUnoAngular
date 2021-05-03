@@ -22,7 +22,7 @@
 
                         <div class="form-group">
                             <label for="foto">Link da foto</label>
-                            <input [(ngModel])='user.foto' class="form-control" type="text" name="foto" id="foto"
+                            <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
                             placeholder="Insira o link da sua foto">
                         </div>
 
@@ -49,8 +49,7 @@
 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-danger mr-4" routerLink="/entrar">Cancelar</button>
-                            <button type="submit" class="btn btn-success" (click)='cadastrar($event)'>Cadastrar</button>
-
+                            <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
                         </div>
 
                     </div>

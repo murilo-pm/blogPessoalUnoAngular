@@ -32,7 +32,7 @@ export class CadastrarComponent implements OnInit { //TS2554: Expected 1 argumen
     this.tipoUsuario=event.target.value
   }
 
-  cadastrar(event: any){
+  cadastrar(){
     this.user.tipo = this.tipoUsuario
     //this.user.tipo = this.tipoUsuario
     
@@ -43,6 +43,8 @@ export class CadastrarComponent implements OnInit { //TS2554: Expected 1 argumen
         this.user = resp
         this.router.navigate(['/entrar'])
         alert("Usuário cadastrado com sucesso")
+      }, erro => {
+        console.log(erro)
       })
     }
   }
