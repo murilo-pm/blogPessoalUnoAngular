@@ -41,11 +41,13 @@ export class CadastrarComponent implements OnInit { //TS2554: Expected 1 argumen
     }else{
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
-        this.router.navigate(['/entrar'])
+        this.router.navigate(['/cadastrar'])
         alert("Usuário cadastrado com sucesso")
-      }, erro => {
-        console.log(erro)
-      })
+      }
+      //, erro => {
+        //console.log(erro)
+      //}
+      )
     }
   }
 
