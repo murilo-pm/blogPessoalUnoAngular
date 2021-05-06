@@ -34,6 +34,6 @@ import { TemaComponent } from './tema/tema.component';
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]//d
 })
 export class AppModule { }
