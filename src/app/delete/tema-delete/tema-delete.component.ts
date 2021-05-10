@@ -9,23 +9,25 @@ import { environment } from 'src/environments/environment.prod';
   templateUrl: './tema-delete.component.html',
   styleUrls: ['./tema-delete.component.css']
 })
-export class TemaDeleteComponent implements OnInit {
+export class TemaDeleteComponent implements OnInit {      //TUDO OKAY AQUI
 
   tema: Tema = new Tema()
-  idTema: number
+  idTema: number                
 
-  constructor() { }
-  private temaService: TemaService
-  private router: Router
-  private route: ActivatedRoute
+  constructor(                              //fora do construtor???
+    private temaService: TemaService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+  
 
   ngOnInit(){
     if(environment.token==""){
       this.router.navigate(["/entrar"])
     }
 
-    let id = this.route.snapshot.params["id"]
-    this.findByIdTema(id) 
+    this.idTema = this.route.snapshot.params["id"]
+    this.findByIdTema(this.idTema) 
 
   }
 

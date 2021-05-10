@@ -23,7 +23,7 @@ export class TemaComponent implements OnInit {
     if(environment.token==""){
       this.router.navigate(['/entrar'])
     }
-    this.findAllTemas //sempre que iniciar a página tema, o "findAll" será executado
+    this.findAllTemas() //sempre que iniciar a página tema, o "findAll" será executado
   }
 
   findAllTemas(){   //lista de tema
